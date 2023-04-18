@@ -1,0 +1,20 @@
+/* Navbar */
+ul{
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
+    max-width: 100%;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid #d7d7d7;
+    list-style-type: none;
+}
+li{
+    margin: 10px;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+}
