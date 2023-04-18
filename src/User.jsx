@@ -3,12 +3,14 @@ import React from 'react';
 const User = ({ onClick, employees }) => {
     return (
         <div>
-            <div>
+            <div className='container_user'>
                 <h1>Generation Thailand</h1>
-                <button value="user" onClick={onClick}>User Home Sector</button>
-                <button value="admin" onClick={onClick}>Admin Home Sector</button>
+                    <div>
+                        <button value="user" onClick={onClick}>User Home Sector</button>
+                        <button value="admin" onClick={onClick}>Admin Home Sector</button>
+                    </div>
             </div>
-            <div>
+            <div className='table_user'>
                 <table>
                     <thead>
                         <tr>

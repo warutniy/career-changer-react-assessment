@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Layout from './Layout';
 import Admin from './Admin';
 import User from './User';
+import './style.css';
 
 const mockEmployees = [
   {
@@ -86,10 +87,12 @@ const Home = () => {
   } else {
     return (
       <Layout>
-        <div>
+        <div className='container_home'>
           <h1>Generation Thailand</h1>
-          <button value="user" onClick={handleClick}>User Home Sector</button>
-          <button value="admin" onClick={handleClick}>Admin Home Sector</button>
+            <div>
+              <button value="user" onClick={handleClick}>User Home Sector</button>
+              <button value="admin" onClick={handleClick}>Admin Home Sector</button>
+            </div>
         </div>
       </Layout>
     );

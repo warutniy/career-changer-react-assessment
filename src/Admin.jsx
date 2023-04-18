@@ -1,18 +1,20 @@
 import React from 'react';
-
+import './style.css';
 
 const Admin = ({ newEmployee, onClick, onChange, onSubmit, onDelete, employees }) => {
 
     return (
         <div>
-            <div>
+            <div className='container_admin'>
                 <h1>Generation Thailand</h1>
-                <button value="user" onClick={onClick}>User Home Sector</button>
-                <button value="admin" onClick={onClick}>Admin Home Sector</button>
+                    <div>
+                        <button value="user" onClick={onClick}>User Home Sector</button>
+                        <button value="admin" onClick={onClick}>Admin Home Sector</button>
+                    </div>
             </div>
             <div>
+                <h3>Create User Here</h3>
                 <form onSubmit={onSubmit}>
-                    <h4>Create User Here</h4>
                     <input
                         type='text'
                         name='name'
@@ -37,7 +39,7 @@ const Admin = ({ newEmployee, onClick, onChange, onSubmit, onDelete, employees }
                     <button type='submit'>save</button>
                 </form>
             </div>
-            <div>
+            <div className='table_admin'>
                 <table>
                     <thead>
                         <tr>
