@@ -1,3 +1,8 @@
+import React, { useState, useEffect } from 'react';
+import Layout from './Layout';
+import Admin from './Admin';
+import User from './User';
+
 const mockEmployees = [
   {
     id: 0,
@@ -21,11 +26,75 @@ const mockEmployees = [
 
 const Home = () => {
 
-  return (
-    <div>
+  const [sector, setSector] = useState("");
 
-    </div>
-  )
+  const handleClick = ({ target }) => {
+    const { value } = target; 
+    setSector(value);
+  };
+
+  // const initApp = () => {
+  //   const _role = role;
+  //   setRole(_role);
+  // };
+
+  // useEffect(initApp, [role]);
+
+  const [newEmployee, setNewEmployee] = useState({});
+
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+    setNewEmployee((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const [employees, setEmployees] = useState(mockEmployees);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setEmployees((prev) => [newEmployee, ...prev]);
+    setNewEmployee({});
+  };
+
+  const handleDelete = (removeIndex) => {
+    setEmployees((prev) => {
+      return prev.filter((employee, index) => index !== removeIndex);
+    });
+  };
+
+  if(sector === 'admin') {
+    return (
+      <Layout>
+        <Admin 
+          onClick={handleClick} 
+          newEmployee={newEmployee} 
+          onChange={handleChange} 
+          onSubmit={handleSubmit} 
+          onDelete={handleDelete} 
+          employees={employees} 
+        />
+      </Layout>
+    );
+  } else if(sector === 'user') {
+    return (
+      <Layout>
+        <User 
+          onClick={handleClick} 
+          employees={employees}  
+        />
+      </Layout>
+    );
+  } else {
+    return (
+      <Layout>
+        <div>
+          <h1>Generation Thailand</h1>
+          <button value="user" onClick={handleClick}>User Home Sector</button>
+          <button value="admin" onClick={handleClick}>Admin Home Sector</button>
+        </div>
+      </Layout>
+    );
+  }
+
 }
 
 
