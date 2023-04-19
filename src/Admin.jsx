@@ -6,11 +6,11 @@ const Admin = ({ newEmployee, onClick, onChange, onSubmit, onDelete, employees }
     return (
         <div>
             <div className='container_admin'>
-                <h1>Generation Thailand</h1>
-                    <div>
-                        <button value="user" onClick={onClick}>User Home Sector</button>
-                        <button value="admin" onClick={onClick}>Admin Home Sector</button>
-                    </div>
+                <h1 id='admin'>Generation Thailand Home - Admin Sector</h1><br />
+                <div>
+                    <button value="user" onClick={onClick}>User Home Sector</button>
+                    <button value="admin" onClick={onClick}>Admin Home Sector</button>
+                </div>
             </div>
             <div>
                 <h3>Create User Here</h3>

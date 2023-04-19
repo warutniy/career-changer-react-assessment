@@ -54,6 +54,11 @@ a{
     margin: 0px 50px;
 }
 
+#home {
+    width: 300px;
+    text-align: center;
+}
+
 /* Admin Page */
 
 .container_admin {
@@ -89,7 +94,12 @@ h3{
     flex-direction: column;
     align-items: center;
     margin-top: 40px;
-  }
+}
+
+#admin {
+    width: 300px;
+    text-align: center;
+}
 
 /* User Page */
 
@@ -109,7 +119,13 @@ h3{
     flex-direction: column;
     align-items: center;
     margin-top: 40px;
-  }
+}
+
+#user {
+    width: 300px;
+    text-align: center;
+}
+
 
 /* All */
 

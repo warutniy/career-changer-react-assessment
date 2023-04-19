@@ -34,13 +34,6 @@ const Home = () => {
     setSector(value);
   };
 
-  // const initApp = () => {
-  //   const _role = role;
-  //   setRole(_role);
-  // };
-
-  // useEffect(initApp, [role]);
-
   const [newEmployee, setNewEmployee] = useState({});
 
   const handleChange = ({ target }) => {
@@ -52,8 +45,16 @@ const Home = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setEmployees((prev) => [newEmployee, ...prev]);
-    setNewEmployee({});
+    if(!newEmployee.name) {
+      return alert("You must input First Name");
+    } else if(!newEmployee.lastname) {
+      return alert("You must input Last Name");
+    } else if(!newEmployee.position) {
+      return alert("You must input Position");
+    } else {
+      setEmployees((prev) => [newEmployee, ...prev]);
+      setNewEmployee({});
+    }
   };
 
   const handleDelete = (removeIndex) => {
@@ -88,11 +89,11 @@ const Home = () => {
     return (
       <Layout>
         <div className='container_home'>
-          <h1>Generation Thailand</h1>
-            <div>
-              <button value="user" onClick={handleClick}>User Home Sector</button>
-              <button value="admin" onClick={handleClick}>Admin Home Sector</button>
-            </div>
+          <h1 id='home'>Generation Thailand React - Assessment</h1><br />
+          <div>
+            <button value="user" onClick={handleClick}>User Home Sector</button>
+            <button value="admin" onClick={handleClick}>Admin Home Sector</button>
+          </div>
         </div>
       </Layout>
     );
